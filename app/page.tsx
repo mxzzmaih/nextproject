@@ -1,9 +1,9 @@
-
+import DashBoardCard from "@/components/dashboard/DashBoardCard";
 export default function Home() {
   return (
     <>
-      <h1 className="text-2xl">DashBoard</h1>
-      
+      <div className="flex flex-col md:flex-row justify-between gap-5 mb-5"></div>
+       <DashBoardCard />
     </>
   );
 }
