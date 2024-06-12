@@ -68,7 +68,7 @@ const Poststable: React.FC<PostsTable> = ({ limit, title }) => {
     const sortedPosts: Post[] = [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
     // Apply limit if provided
-    const displayedPosts = limit ? sortedPosts.slice(0, limit) : sortedPosts;
+    const filteredPosts = limit ? sortedPosts.slice(0, limit) : sortedPosts;
 
     return (
         <div className="mt-10">
@@ -86,7 +86,7 @@ const Poststable: React.FC<PostsTable> = ({ limit, title }) => {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {displayedPosts.map((post: Post, index: number) => (
+                    {filteredPosts.map((post: Post, index: number) => (
                         <TableRow key={index}>
                             <TableCell>{post.title}</TableCell>
                             <TableCell className="hidden md:table-cell">{post.author}</TableCell>

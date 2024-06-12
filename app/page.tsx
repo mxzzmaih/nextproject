@@ -1,6 +1,9 @@
+'use client'
 import DashBoardCard from "@/components/dashboard/DashBoardCard";
+import AnalyticsCharts from "@/components/dashboard/AnalyticsCharts";
 import { Folder, MessageCircle, Newspaper, User } from "lucide-react";
 import Poststable from "@/components/posts/PostsTable";
+
 export default function Home() {
   return (
     <>
@@ -8,24 +11,25 @@ export default function Home() {
         <DashBoardCard 
           title="Posts" 
           count={100} 
-          icon={<Newspaper className="text-slate-600 dark:text-slate-400 w-12 h-12 size={72}" />}
+          icon={<Newspaper className="text-slate-600 dark:text-slate-400 w-12 h-12" />}
         />
         <DashBoardCard 
           title="Categories" 
           count={12} 
-          icon={<Folder className="text-slate-600 dark:text-slate-400 w-12 h-12 size={72}" />}
+          icon={<Folder className="text-slate-600 dark:text-slate-400 w-12 h-12" />}
         />
         <DashBoardCard 
           title="Users" 
           count={750} 
-          icon={<User className="text-slate-600 dark:text-slate-400 w-12 h-12 size={72}" />}
+          icon={<User className="text-slate-600 dark:text-slate-400 w-12 h-12" />}
         />
         <DashBoardCard 
           title="Comments" 
           count={1200} 
-          icon={<MessageCircle className="text-slate-600 dark:text-slate-400 w-12 h-12 size={72}" />}
+          icon={<MessageCircle className="text-slate-600 dark:text-slate-400 w-12 h-12" />}
         />
       </div>
+      <AnalyticsCharts />
       <Poststable title="Latest Posts" limit={5}/>
     </>
   );
